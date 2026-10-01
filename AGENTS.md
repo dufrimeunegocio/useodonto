@@ -8,3 +8,8 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Project architecture
+
+- Keep the public site as a single-page, section-based experience at `/`; the supplied brief defines one continuous institutional journey.
+- Store uploaded media through Lovable Assets pointers and import their `.url`; this keeps production assets stable without repository binaries.
