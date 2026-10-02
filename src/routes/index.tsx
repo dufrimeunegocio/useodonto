@@ -2,13 +2,21 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
   ArrowRight,
+  BadgeCheck,
+  BrushCleaning,
+  CircleDot,
+  CircleGauge,
+  Gem,
   Heart,
   Instagram,
   MapPin,
   Menu,
   Phone,
   Quote,
-  Sparkles,
+  ShieldCheck,
+  Smile,
+  Sparkle,
+  Zap,
   X,
 } from "lucide-react";
 
@@ -22,7 +30,6 @@ import {
 
 import bannerHero from "@/assets/banner-hero.png.asset.json";
 import implante from "@/assets/implante.png.asset.json";
-import logoOffWhite from "@/assets/logo-off-white.png.asset.json";
 import logoTransparente from "@/assets/logo-transparente.png.asset.json";
 import recepcao from "@/assets/recepcao.png.asset.json";
 import salaAtendimento from "@/assets/sala-atendimento.png.asset.json";
@@ -97,15 +104,15 @@ const convenios = [
 ];
 
 const tratamentos = [
-  "Clareamento dental",
-  "Dentaduras e pontes",
-  "Implantes dentários",
-  "Implantes dentários sem corte",
-  "Próteses dentárias",
-  "Implante unitário",
-  "Protocolo de carga imediata",
-  "Protocolo de carga imediata — sorriso fixo em 24 horas",
-  "Prótese protocolo superior",
+  { nome: "Clareamento dental", Icone: Sparkle },
+  { nome: "Dentaduras e pontes", Icone: Smile },
+  { nome: "Implantes dentários", Icone: CircleDot },
+  { nome: "Implantes dentários sem corte", Icone: ShieldCheck },
+  { nome: "Próteses dentárias", Icone: Gem },
+  { nome: "Implante unitário", Icone: BadgeCheck },
+  { nome: "Protocolo de carga imediata", Icone: Zap },
+  { nome: "Protocolo de carga imediata sorriso fixo em 24 horas", Icone: CircleGauge },
+  { nome: "Prótese protocolo superior", Icone: BrushCleaning },
 ];
 
 const resultados = [resultado1, resultado2, resultado3, resultado4];
@@ -184,39 +191,38 @@ function Index() {
 
   return (
     <main className="site-shell">
-      <header className="site-header">
-        <a href="#inicio" aria-label="UseOdonto — início" className="brand-link">
-          <img src={logoTransparente.url} alt="UseOdonto Instituto Odontológico" />
-        </a>
-        <nav className="desktop-nav" aria-label="Navegação principal">
-          {navItems.map(([label, id]) => (
-            <a key={id} href={`#${id}`}>{label}</a>
-          ))}
-        </nav>
-        <Button
-          variant="ghost"
-          size="icon"
-          className="menu-toggle"
-          aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen((open) => !open)}
-        >
-          {menuOpen ? <X /> : <Menu />}
-        </Button>
-        {menuOpen && (
-          <nav className="mobile-nav" aria-label="Navegação móvel">
-            {navItems.map(([label, id]) => (
-              <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>{label}</a>
-            ))}
-          </nav>
-        )}
-      </header>
-
       <section id="inicio" className="hero" style={{ backgroundImage: `url(${bannerHero.url})` }}>
         <div className="hero-overlay" />
+        <header className="site-header">
+          <a href="#inicio" aria-label="UseOdonto — início" className="brand-link">
+            <img src={logoTransparente.url} alt="UseOdonto Instituto Odontológico" />
+          </a>
+          <nav className="desktop-nav" aria-label="Navegação principal">
+            {navItems.map(([label, id]) => (
+              <a key={id} href={`#${id}`}>{label}</a>
+            ))}
+          </nav>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="menu-toggle"
+            aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            {menuOpen ? <X /> : <Menu />}
+          </Button>
+          {menuOpen && (
+            <nav className="mobile-nav" aria-label="Navegação móvel">
+              {navItems.map(([label, id]) => (
+                <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>{label}</a>
+              ))}
+            </nav>
+          )}
+        </header>
         <div className="hero-content reveal">
           <div className="gold-line" />
-          <p className="eyebrow-light">Instituto Odontológico · Guarulhos</p>
+          <p className="eyebrow-light">Clínica Odontológica em Guarulhos</p>
           <h1>Seu sorriso merece um cuidado que vai além da estética.</h1>
           <p className="hero-copy">Tratamentos odontológicos completos, tecnologia e atendimento humanizado em Guarulhos.</p>
           <Button asChild size="lg" className="gold-button">
@@ -245,11 +251,10 @@ function Index() {
         <div className="container">
           <SectionHeading eyebrow="Nossos tratamentos" title="Soluções para cuidar do seu sorriso" />
           <div className="treatments-grid">
-            {tratamentos.map((tratamento, index) => (
-              <article className="treatment-card reveal" key={tratamento}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <h3>{tratamento}</h3>
-                <Sparkles aria-hidden="true" />
+            {tratamentos.map(({ nome, Icone }) => (
+              <article className="treatment-card reveal" key={nome}>
+                <span className="treatment-icon"><Icone aria-hidden="true" /></span>
+                <h3>{nome}</h3>
               </article>
             ))}
           </div>
@@ -261,7 +266,6 @@ function Index() {
           <div className="result-copy">
             <SectionHeading eyebrow="Antes e depois" title="Resultados que transformam sorrisos" />
             <p>Cada sorriso conta uma história de cuidado, confiança e transformação.</p>
-            <div className="slide-count"><strong>{String(resultadoAtual + 1).padStart(2, "0")}</strong><span>/ 04</span></div>
           </div>
           <div className="single-carousel result-carousel" aria-live="polite">
             {resultados.map((asset, index) => (
@@ -331,7 +335,7 @@ function Index() {
           <Accordion type="single" collapsible className="faq-accordion">
             {faqs.map(([pergunta, resposta], index) => (
               <AccordionItem key={pergunta} value={`faq-${index}`}>
-                <AccordionTrigger><span><small>{String(index + 1).padStart(2, "0")}</small>{pergunta}</span></AccordionTrigger>
+                <AccordionTrigger><span>{pergunta}</span></AccordionTrigger>
                 <AccordionContent>{resposta}</AccordionContent>
               </AccordionItem>
             ))}
@@ -370,7 +374,9 @@ function Index() {
               <div><Phone aria-hidden="true" /><p><a href="tel:+551124929548">(11) 2492-9548</a><br /><a href="https://wa.me/5511970982062" target="_blank" rel="noreferrer">WhatsApp: (11) 97098-2062</a></p></div>
               <div><Instagram aria-hidden="true" /><a href="https://www.instagram.com/useodonto.instituto?stkn=MTVydFJsemMzbnVmbQ==" target="_blank" rel="noreferrer">@useodonto.instituto</a></div>
             </address>
-            <a className="maps-link" href="https://www.google.com/maps/search/?api=1&query=Av.%20Otávio%20Braga%20de%20Mesquita%2C%201779%20Guarulhos%20SP" target="_blank" rel="noreferrer">Abrir no Google Maps <ArrowRight /></a>
+            <Button asChild className="location-button">
+              <a href="https://www.google.com/maps/search/?api=1&query=Av.%20Otávio%20Braga%20de%20Mesquita%2C%201779%20Guarulhos%20SP" target="_blank" rel="noreferrer">Abrir no Google Maps <ArrowRight /></a>
+            </Button>
           </div>
           <iframe
             title="Localização da UseOdonto em Guarulhos"
@@ -383,13 +389,16 @@ function Index() {
 
       <footer className="site-footer">
         <div className="container footer-main">
-          <img src={logoOffWhite.url} alt="UseOdonto Instituto Odontológico" />
+          <img src={logoTransparente.url} alt="UseOdonto Instituto Odontológico" />
           <nav aria-label="Navegação do rodapé">
             {navItems.map(([label, id]) => <a key={id} href={`#${id}`}>{label}</a>)}
           </nav>
           <div className="footer-contact"><a href="tel:+551124929548">(11) 2492-9548</a><a href="https://wa.me/5511970982062">(11) 97098-2062</a><a href="https://www.instagram.com/useodonto.instituto?stkn=MTVydFJsemMzbnVmbQ==">Instagram</a></div>
         </div>
-        <div className="footer-bottom container">Desenvolvido com <Heart aria-label="amor" /> por <a href="https://dufrimeunegocio.com.br" target="_blank" rel="noreferrer">@Dufrimeunegocio</a></div>
+        <div className="footer-bottom container">
+          <span>© 2026 Clínica Odontológica em Guarulhos. Todos os direitos reservados.</span>
+          <span>Desenvolvido com <Heart aria-label="amor" /> por <a href="https://dufrimeunegocio.com.br" target="_blank" rel="noreferrer">@Dufrimeunegocio</a></span>
+        </div>
       </footer>
     </main>
   );
