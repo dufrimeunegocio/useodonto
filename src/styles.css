@@ -6,7 +6,7 @@
 
 @theme inline {
   --font-sans: "Manrope", sans-serif;
-  --font-display: "Cormorant Garamond", serif;
+  --font-display: "Manrope", sans-serif;
   --radius-sm: calc(var(--radius) - 2px);
   --radius-md: var(--radius);
   --radius-lg: calc(var(--radius) + 2px);
@@ -71,16 +71,16 @@ button, a { letter-spacing: 0; }
 .container { width: min(1180px, calc(100% - 48px)); margin-inline: auto; }
 .section { padding: 112px 0; }
 
-.site-header { position: fixed; z-index: 50; inset: 0 0 auto; height: 76px; display: flex; align-items: center; justify-content: space-between; padding: 0 max(24px, calc((100vw - 1280px)/2)); color: var(--cream); background: color-mix(in srgb, var(--navy) 94%, transparent); border-bottom: 1px solid color-mix(in srgb, var(--cream) 13%, transparent); backdrop-filter: blur(16px); }
-.brand-link { display: flex; width: 128px; height: 58px; align-items: center; overflow: hidden; }
-.brand-link img { width: 128px; transform: scale(1.7); }
+.site-header { position: absolute; z-index: 50; inset: 18px max(24px, calc((100vw - 1280px)/2)) auto; height: 68px; display: flex; align-items: center; justify-content: space-between; padding: 0 22px; color: var(--cream); background: color-mix(in srgb, var(--navy) 42%, transparent); border: 1px solid color-mix(in srgb, var(--cream) 15%, transparent); border-radius: 10px; backdrop-filter: blur(14px); }
+.brand-link { display: flex; width: 108px; height: 54px; align-items: center; justify-content: center; overflow: hidden; }
+.brand-link img { width: 104px; height: 50px; object-fit: contain; }
 .desktop-nav { display: flex; gap: 28px; align-items: center; font-size: 12px; text-transform: uppercase; }
 .desktop-nav a { position: relative; opacity: .86; transition: opacity .25s; }
 .desktop-nav a::after { content: ""; position: absolute; height: 1px; left: 0; right: 100%; bottom: -8px; background: var(--gold); transition: right .25s; }
 .desktop-nav a:hover { opacity: 1; }
 .desktop-nav a:hover::after { right: 0; }
 .menu-toggle { display: none; color: var(--cream); }
-.mobile-nav { position: absolute; inset: 76px 0 auto; background: var(--navy); border-top: 1px solid color-mix(in srgb, var(--cream) 12%, transparent); padding: 18px 24px 28px; display: grid; }
+.mobile-nav { position: absolute; inset: 76px 0 auto; background: color-mix(in srgb, var(--navy) 96%, transparent); border: 1px solid color-mix(in srgb, var(--cream) 12%, transparent); border-radius: 8px; padding: 18px 24px 28px; display: grid; backdrop-filter: blur(14px); }
 .mobile-nav a { padding: 13px 0; border-bottom: 1px solid color-mix(in srgb, var(--cream) 10%, transparent); }
 
 .hero { min-height: 92vh; height: 820px; max-height: 920px; position: relative; display: flex; align-items: center; background-size: cover; background-position: center 58%; color: var(--cream); }
@@ -89,9 +89,9 @@ button, a { letter-spacing: 0; }
 .hero-content { position: relative; z-index: 1; width: min(1180px, calc(100% - 48px)); margin: 52px auto 0; }
 .gold-line { width: 70px; height: 1px; background: var(--gold); margin-bottom: 24px; }
 .eyebrow-light, .section-kicker, .section-heading span, .final-cta-inner > span, .instagram-content > div > span { font-size: 11px; text-transform: uppercase; font-weight: 700; letter-spacing: .18em; }
-.hero h1 { margin: 18px 0 22px; max-width: 780px; font-family: var(--font-display); font-weight: 500; font-size: clamp(52px, 6vw, 86px); line-height: .98; }
+.hero h1 { margin: 18px 0 22px; max-width: 800px; font-family: var(--font-display); font-weight: 600; font-size: clamp(48px, 5.5vw, 78px); line-height: 1.04; }
 .hero-copy { max-width: 600px; color: color-mix(in srgb, var(--cream) 84%, transparent); line-height: 1.75; font-size: 17px; }
-.gold-button { margin-top: 28px; height: 52px; padding-inline: 26px; background: var(--gold); color: var(--navy); box-shadow: none; border-radius: 2px; text-transform: uppercase; font-size: 11px; letter-spacing: .13em; }
+.gold-button { margin-top: 28px; height: 52px; padding-inline: 26px; background: var(--gold); color: var(--primary-foreground); box-shadow: none; border-radius: 999px; text-transform: uppercase; font-size: 11px; letter-spacing: .13em; }
 .gold-button:hover { background: var(--gold-soft); }
 .hero-index { position: absolute; z-index: 2; right: 5%; bottom: 46px; display: flex; align-items: center; gap: 14px; font-family: var(--font-display); }
 .hero-index i { display: block; width: 80px; height: 1px; background: var(--gold); }
@@ -106,22 +106,20 @@ button, a { letter-spacing: 0; }
 
 .section-heading { max-width: 650px; }
 .section-heading span, .section-kicker { color: var(--gold); }
-.section-heading h2, .implant-copy h2, .contact-copy h2, .final-cta h2, .instagram-content h2 { margin: 12px 0 0; font-family: var(--font-display); font-size: clamp(42px, 5vw, 64px); line-height: 1.05; font-weight: 500; }
+.section-heading h2, .implant-copy h2, .contact-copy h2, .final-cta h2, .instagram-content h2 { margin: 12px 0 0; font-family: var(--font-display); font-size: clamp(40px, 4.5vw, 60px); line-height: 1.1; font-weight: 600; }
 .treatments-section { background: var(--cream); }
-.treatments-grid { margin-top: 56px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--border); border-left: 1px solid var(--border); }
-.treatment-card { min-height: 190px; padding: 26px; position: relative; display: flex; flex-direction: column; justify-content: space-between; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); transition: background .3s, color .3s; }
-.treatment-card > span { font-family: var(--font-display); color: var(--gold); }
-.treatment-card h3 { max-width: 280px; margin: 30px 0 0; font-family: var(--font-display); font-size: 25px; line-height: 1.1; font-weight: 500; }
-.treatment-card svg { position: absolute; right: 24px; bottom: 24px; width: 18px; color: var(--gold); opacity: 0; transition: opacity .3s; }
+.treatments-grid { margin-top: 56px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.treatment-card { min-height: 190px; padding: 26px; position: relative; display: flex; flex-direction: column; justify-content: space-between; background: var(--paper); border: 1px solid var(--border); border-radius: 12px; transition: background .3s, color .3s, transform .3s; }
+.treatment-icon { width: 44px; height: 44px; display: grid; place-items: center; color: var(--gold); background: color-mix(in srgb, var(--gold) 10%, transparent); border-radius: 10px; }
+.treatment-card h3 { max-width: 280px; margin: 30px 0 0; font-family: var(--font-display); font-size: 22px; line-height: 1.2; font-weight: 600; }
+.treatment-card svg { width: 22px; height: 22px; }
 .treatment-card:hover { background: var(--navy); color: var(--cream); }
-.treatment-card:hover svg { opacity: 1; }
+.treatment-card:hover { transform: translateY(-3px); }
 
 .results-section { background: var(--navy); color: var(--cream); }
 .result-layout { display: grid; grid-template-columns: .72fr 1.28fr; gap: 80px; align-items: center; }
 .result-copy > p, .clinic-copy > p, .implant-copy > p { line-height: 1.8; color: color-mix(in srgb, currentColor 70%, transparent); }
 .result-copy > p { margin-top: 28px; }
-.slide-count { display: flex; align-items: baseline; gap: 7px; margin-top: 56px; font-family: var(--font-display); }
-.slide-count strong { font-size: 45px; font-weight: 400; color: var(--gold); }.slide-count span { opacity: .6; }
 .single-carousel { position: relative; overflow: hidden; }
 .single-carousel > img { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1.4s ease; }
 .single-carousel > img.active { opacity: 1; z-index: 1; }
@@ -143,8 +141,8 @@ button, a { letter-spacing: 0; }
 .implant-image-wrap img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center; }
 .implant-copy h2 { margin-top: 16px; }
 .implant-copy > p { margin: 26px 0; max-width: 530px; }
-.outline-button { border-color: var(--gold); background: transparent; color: var(--navy); border-radius: 2px; box-shadow: none; text-transform: uppercase; font-size: 10px; letter-spacing: .12em; }
-.outline-button:hover { background: var(--gold); color: var(--navy); }
+.outline-button { border-color: var(--gold); background: var(--gold); color: var(--primary-foreground); border-radius: 999px; box-shadow: none; text-transform: uppercase; font-size: 10px; letter-spacing: .12em; }
+.outline-button:hover { background: var(--gold-soft); color: var(--primary-foreground); }
 
 .testimonials-section { background: var(--navy); color: var(--cream); }
 .testimonials-layout { display: grid; grid-template-columns: .75fr 1.25fr; gap: 100px; }
@@ -154,24 +152,24 @@ button, a { letter-spacing: 0; }
 .testimonial-stage figure.active { opacity: 1; transform: none; pointer-events: auto; }
 .testimonial-stage figure > svg { width: 48px; height: 48px; color: var(--gold); stroke-width: 1; }
 .stars { color: var(--gold); margin-top: 28px; letter-spacing: .18em; }
-.testimonial-stage blockquote { margin: 22px 0 30px; font-family: var(--font-display); font-size: clamp(26px, 3vw, 37px); line-height: 1.3; white-space: pre-line; }
+.testimonial-stage blockquote { margin: 22px 0 30px; font-family: var(--font-display); font-size: clamp(24px, 2.6vw, 34px); line-height: 1.4; font-weight: 500; white-space: pre-line; }
 .testimonial-stage figcaption { color: var(--gold-soft); text-transform: uppercase; font-size: 11px; letter-spacing: .14em; }
 
-.faq-section { background: var(--paper); }.faq-layout { display: grid; grid-template-columns: .65fr 1.35fr; gap: 100px; }.faq-accordion { border-top: 1px solid var(--border); }.faq-accordion button { padding: 23px 0; font-family: var(--font-display); font-size: 22px; text-decoration: none; }.faq-accordion button:hover { text-decoration: none; color: var(--gold); }.faq-accordion button small { display: inline-block; width: 45px; color: var(--gold); font-family: var(--font-sans); font-size: 9px; letter-spacing: .12em; }.faq-accordion [data-slot="accordion-content"], .faq-accordion div[role="region"] { line-height: 1.8; color: var(--muted-foreground); padding-left: 45px; }
+.faq-section { background: var(--paper); }.faq-layout { max-width: 860px; display: flex; flex-direction: column; align-items: center; gap: 48px; text-align: center; }.faq-layout .section-heading { margin-inline: auto; }.faq-accordion { width: 100%; border-top: 1px solid var(--border); }.faq-accordion button { justify-content: center; gap: 18px; padding: 23px 0; font-family: var(--font-display); font-size: 20px; font-weight: 600; text-decoration: none; text-align: center; }.faq-accordion button:hover { text-decoration: none; color: var(--gold); }.faq-accordion button > span { flex: 1; padding-left: 22px; }.faq-accordion [data-slot="accordion-content"], .faq-accordion div[role="region"] { line-height: 1.8; color: var(--muted-foreground); padding-inline: 34px; text-align: center; }
 
 .instagram-section { padding: 68px 0; background: var(--cream); border-top: 1px solid var(--border); }.instagram-content { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 32px; }.instagram-content > svg { width: 52px; height: 52px; color: var(--gold); stroke-width: 1.3; }.instagram-content h2 { font-size: 40px; margin-top: 5px; }.instagram-content p { margin: 6px 0 0; color: var(--muted-foreground); }
 .final-cta { padding: 106px 0; background: var(--navy); color: var(--cream); text-align: center; }.final-cta-inner > span { color: var(--gold); }.final-cta h2 { max-width: 760px; margin: 16px auto 14px; font-size: clamp(48px, 6vw, 72px); }.final-cta p { color: color-mix(in srgb, var(--cream) 70%, transparent); }
 
-.contact-section { padding: 110px 0; background: var(--paper); }.contact-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 80px; align-items: stretch; }.contact-copy address { margin-top: 38px; font-style: normal; display: grid; gap: 23px; }.contact-copy address > div { display: flex; gap: 15px; line-height: 1.65; }.contact-copy address svg { width: 18px; color: var(--gold); flex: none; margin-top: 3px; }.contact-copy address p { margin: 0; }.maps-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 34px; padding-bottom: 5px; border-bottom: 1px solid var(--gold); font-size: 11px; text-transform: uppercase; letter-spacing: .1em; }.maps-link svg { width: 14px; }.contact-layout iframe { width: 100%; min-height: 520px; border: 0; filter: saturate(.25) contrast(.95); }
+.contact-section { padding: 110px 0; background: var(--paper); }.contact-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 80px; align-items: stretch; }.contact-copy address { margin-top: 38px; font-style: normal; display: grid; gap: 23px; }.contact-copy address > div { display: flex; gap: 15px; line-height: 1.65; }.contact-copy address svg { width: 18px; color: var(--gold); flex: none; margin-top: 3px; }.contact-copy address p { margin: 0; }.location-button { margin-top: 34px; height: 46px; padding-inline: 22px; border-radius: 999px; background: var(--gold); color: var(--primary-foreground); text-transform: uppercase; font-size: 10px; letter-spacing: .1em; box-shadow: none; }.location-button:hover { background: var(--gold-soft); }.contact-layout iframe { width: 100%; min-height: 520px; border: 0; filter: saturate(.25) contrast(.95); }
 
-.site-footer { background: var(--cream); border-top: 1px solid var(--border); }.footer-main { min-height: 220px; display: grid; grid-template-columns: 220px 1fr auto; align-items: center; gap: 70px; }.footer-main > img { width: 180px; }.footer-main nav { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 28px; font-size: 11px; text-transform: uppercase; }.footer-contact { display: grid; gap: 10px; text-align: right; font-size: 12px; }.footer-bottom { padding: 18px 0; border-top: 1px solid var(--border); display: flex; justify-content: center; align-items: center; gap: 5px; font-size: 10px; text-transform: uppercase; color: var(--muted-foreground); }.footer-bottom svg { width: 13px; fill: none; stroke: var(--navy); }.footer-bottom a { color: var(--navy); font-weight: 700; }
+.site-footer { background: var(--navy); color: var(--cream); border-top: 1px solid color-mix(in srgb, var(--cream) 12%, transparent); }.footer-main { min-height: 240px; display: grid; grid-template-columns: 220px 1fr auto; align-items: center; gap: 70px; }.footer-main > img { width: 180px; height: 110px; object-fit: contain; }.footer-main nav { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 28px; font-size: 11px; text-transform: uppercase; }.footer-contact { display: grid; gap: 10px; text-align: right; font-size: 12px; }.footer-bottom { padding: 20px 0; border-top: 1px solid color-mix(in srgb, var(--cream) 13%, transparent); display: flex; justify-content: space-between; align-items: center; gap: 20px; font-size: 9px; text-transform: uppercase; color: color-mix(in srgb, var(--cream) 70%, transparent); }.footer-bottom > span:last-child { display: flex; align-items: center; gap: 5px; }.footer-bottom svg { width: 13px; fill: none; stroke: var(--cream); }.footer-bottom a { color: var(--cream); font-weight: 700; }
 
 @media (max-width: 900px) {
-  .desktop-nav { display: none; }.menu-toggle { display: inline-flex; }.hero { height: 760px; }.treatments-grid { grid-template-columns: repeat(2, 1fr); }.result-layout, .clinic-layout, .implant-layout, .testimonials-layout, .faq-layout, .contact-layout { grid-template-columns: 1fr; gap: 56px; }.result-carousel { grid-row: 2; }.clinic-carousel { height: 650px; }.clinic-copy { grid-row: 1; }.testimonial-stage { min-height: 450px; }.footer-main { grid-template-columns: 1fr 1fr; }.footer-main > img { grid-column: 1 / -1; }.contact-layout iframe { min-height: 420px; }
+  .desktop-nav { display: none; }.menu-toggle { display: inline-flex; }.hero { height: 760px; }.treatments-grid { grid-template-columns: repeat(2, 1fr); }.result-layout, .clinic-layout, .implant-layout, .testimonials-layout, .contact-layout { grid-template-columns: 1fr; gap: 56px; }.result-carousel { grid-row: 2; }.clinic-carousel { height: 650px; }.clinic-copy { grid-row: 1; }.testimonial-stage { min-height: 450px; }.footer-main { grid-template-columns: 1fr 1fr; }.footer-main > img { grid-column: 1 / -1; }.contact-layout iframe { min-height: 420px; }
 }
 
 @media (max-width: 600px) {
-  .container, .hero-content { width: min(100% - 32px, 1180px); }.section { padding: 78px 0; }.site-header { height: 68px; padding-inline: 16px; }.mobile-nav { top: 68px; }.brand-link { width: 112px; }.brand-link img { width: 112px; }.hero { min-height: 700px; height: 88vh; max-height: 780px; background-position: 55% center; }.hero h1 { font-size: 48px; }.hero-copy { font-size: 15px; }.hero-index { display: none; }.logo-item { width: 150px; padding-inline: 20px; }.section-heading h2, .implant-copy h2, .contact-copy h2 { font-size: 43px; }.treatments-grid { grid-template-columns: 1fr; margin-top: 38px; }.treatment-card { min-height: 150px; }.result-layout { gap: 38px; }.clinic-carousel { height: 590px; }.implant-layout { gap: 46px; }.testimonial-stage { border-left: 0; padding-left: 0; min-height: 520px; }.testimonial-stage figure { inset: 0; }.testimonial-stage blockquote { font-size: 27px; }.faq-layout { gap: 38px; }.faq-accordion button { font-size: 19px; }.instagram-content { grid-template-columns: auto 1fr; gap: 18px; }.instagram-content .outline-button { grid-column: 1 / -1; width: 100%; }.instagram-content h2 { font-size: 29px; overflow-wrap: anywhere; }.final-cta { padding: 82px 0; }.final-cta h2 { font-size: 50px; }.contact-section { padding: 78px 0; }.contact-layout iframe { min-height: 360px; }.footer-main { padding: 48px 0; grid-template-columns: 1fr; gap: 38px; }.footer-main > img { grid-column: auto; }.footer-contact { text-align: left; }.footer-bottom { flex-wrap: wrap; text-align: center; }.photo-caption { left: 12px; right: 12px; text-align: center; }
+  .container, .hero-content { width: min(100% - 32px, 1180px); }.section { padding: 78px 0; }.site-header { inset: 10px 12px auto; height: 62px; padding-inline: 12px; }.mobile-nav { top: 68px; left: 0; right: 0; }.brand-link { width: 92px; height: 50px; }.brand-link img { width: 88px; height: 46px; }.hero { min-height: 700px; height: 88vh; max-height: 780px; background-position: 55% center; }.hero h1 { font-size: 44px; }.hero-copy { font-size: 15px; }.hero-index { display: none; }.logo-item { width: 150px; padding-inline: 20px; }.section-heading h2, .implant-copy h2, .contact-copy h2 { font-size: 40px; }.treatments-grid { grid-template-columns: 1fr; margin-top: 38px; }.treatment-card { min-height: 150px; }.result-layout { gap: 38px; }.clinic-carousel { height: 590px; }.implant-layout { gap: 46px; }.testimonial-stage { border-left: 0; padding-left: 0; min-height: 520px; }.testimonial-stage figure { inset: 0; }.testimonial-stage blockquote { font-size: 25px; }.faq-layout { gap: 38px; }.faq-accordion button { font-size: 18px; }.faq-accordion button > span { padding-left: 18px; }.instagram-content { grid-template-columns: auto 1fr; gap: 18px; }.instagram-content .outline-button { grid-column: 1 / -1; width: 100%; }.instagram-content h2 { font-size: 29px; overflow-wrap: anywhere; }.final-cta { padding: 82px 0; }.final-cta h2 { font-size: 46px; }.contact-section { padding: 78px 0; }.contact-layout iframe { min-height: 360px; }.footer-main { width: min(100% - 72px, 420px); padding: 48px 0; grid-template-columns: 1fr; gap: 34px; justify-items: start; }.footer-main > img { grid-column: auto; width: 160px; }.footer-main nav { grid-template-columns: 1fr; }.footer-contact { text-align: left; }.footer-bottom { width: min(100% - 48px, 420px); flex-direction: column; align-items: flex-start; text-align: left; }.photo-caption { left: 12px; right: 12px; text-align: center; }
 }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .logo-track { animation-play-state: paused; } .single-carousel > img, .testimonial-stage figure { transition: none; } }
