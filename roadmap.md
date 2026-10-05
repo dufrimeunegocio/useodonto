@@ -7,3 +7,4 @@
 - [ ] Centralizar e alinhar o FAQ.
 - [ ] Atualizar rodapé azul, logo e copyright de 2026.
 - [ ] Validar visual e funcionamento em desktop e celular.
+- [ ] Revisar e incorporar as novas instruções do arquivo enviado em 5 de outubro.
