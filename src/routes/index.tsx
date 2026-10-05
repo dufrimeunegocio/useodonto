@@ -11,6 +11,7 @@ import {
   Instagram,
   MapPin,
   Menu,
+  MessageCircle,
   Phone,
   Quote,
   ShieldCheck,
@@ -220,18 +221,17 @@ function Index() {
             </nav>
           )}
         </header>
-        <div className="hero-content reveal">
+        <div className="hero-content">
           <div className="gold-line" />
-          <p className="eyebrow-light">Clínica Odontológica em Guarulhos</p>
-          <h1>Seu sorriso merece um cuidado que vai além da estética.</h1>
-          <p className="hero-copy">Tratamentos odontológicos completos, tecnologia e atendimento humanizado em Guarulhos.</p>
-          <Button asChild size="lg" className="gold-button">
+          <p className="eyebrow-light hero-animate hero-animate-eyebrow">Clínica Odontológica em Guarulhos</p>
+          <h1 className="hero-animate hero-animate-title">Seu sorriso merece um cuidado que vai além da estética.</h1>
+          <p className="hero-copy hero-animate hero-animate-copy">Tratamentos odontológicos completos, tecnologia e atendimento humanizado em Guarulhos.</p>
+          <Button asChild size="lg" className="gold-button hero-animate hero-animate-button">
             <a href="https://wa.me/5511970982062" target="_blank" rel="noreferrer">
               Agendar avaliação <ArrowRight />
             </a>
           </Button>
         </div>
-        <div className="hero-index" aria-hidden="true"><span>01</span><i /></div>
       </section>
 
       <section id="convenios" className="convenios-section" aria-label="Convênios atendidos">
@@ -294,9 +294,6 @@ function Index() {
 
       <section className="section implant-section">
         <div className="container implant-layout">
-          <div className="implant-image-wrap reveal">
-            <img src={implante.url} alt="Trabalho odontológico de implante realizado pela UseOdonto" />
-          </div>
           <div className="implant-copy">
             <span className="section-kicker">Implantes dentários</span>
             <h2>Mais segurança para sorrir, falar e mastigar.</h2>
@@ -304,6 +301,9 @@ function Index() {
             <Button asChild variant="outline" size="lg" className="outline-button">
               <a href="https://wa.me/5511970982062" target="_blank" rel="noreferrer">Falar com a equipe <ArrowRight /></a>
             </Button>
+          </div>
+          <div className="implant-image-wrap reveal">
+            <img src={implante.url} alt="Trabalho odontológico de implante realizado pela UseOdonto" />
           </div>
         </div>
       </section>
@@ -346,10 +346,9 @@ function Index() {
       <section className="instagram-section">
         <div className="container instagram-content">
           <Instagram aria-hidden="true" />
-          <div><span>Siga a UseOdonto</span><h2>@useodonto.instituto</h2><p>Acompanhe nossa rotina, tratamentos e resultados.</p></div>
-          <Button asChild variant="outline" className="outline-button">
-            <a href="https://www.instagram.com/useodonto.instituto?stkn=MTVydFJsemMzbnVmbQ==" target="_blank" rel="noreferrer">Acompanhar <ArrowRight /></a>
-          </Button>
+          <a href="https://www.instagram.com/useodonto.instituto?stkn=MTVydFJsemMzbnVmbQ==" target="_blank" rel="noreferrer">
+            <h2>@useodonto.instituto</h2><p>Acompanhe nossa rotina, tratamentos e resultados.</p>
+          </a>
         </div>
       </section>
 
@@ -371,7 +370,8 @@ function Index() {
             <h2>Estamos em Guarulhos</h2>
             <address>
               <div><MapPin aria-hidden="true" /><p>Av. Otávio Braga de Mesquita, 1779<br />Vila Florida — Guarulhos/SP<br />07191-000</p></div>
-              <div><Phone aria-hidden="true" /><p><a href="tel:+551124929548">(11) 2492-9548</a><br /><a href="https://wa.me/5511970982062" target="_blank" rel="noreferrer">WhatsApp: (11) 97098-2062</a></p></div>
+              <div><Phone aria-hidden="true" /><a href="tel:+551124929548">(11) 2492-9548</a></div>
+              <div><MessageCircle aria-hidden="true" /><a href="https://wa.me/5511970982062" target="_blank" rel="noreferrer">(11) 97098-2062</a></div>
               <div><Instagram aria-hidden="true" /><a href="https://www.instagram.com/useodonto.instituto?stkn=MTVydFJsemMzbnVmbQ==" target="_blank" rel="noreferrer">@useodonto.instituto</a></div>
             </address>
             <Button asChild className="location-button">
@@ -390,10 +390,20 @@ function Index() {
       <footer className="site-footer">
         <div className="container footer-main">
           <img src={logoTransparente.url} alt="UseOdonto Instituto Odontológico" />
-          <nav aria-label="Navegação do rodapé">
+          <nav aria-label="Navegação do rodapé"><h3>Menu</h3>
             {navItems.map(([label, id]) => <a key={id} href={`#${id}`}>{label}</a>)}
           </nav>
-          <div className="footer-contact"><a href="tel:+551124929548">(11) 2492-9548</a><a href="https://wa.me/5511970982062">(11) 97098-2062</a><a href="https://www.instagram.com/useodonto.instituto?stkn=MTVydFJsemMzbnVmbQ==">Instagram</a></div>
+          <div className="footer-contact">
+            <h3>Contato</h3>
+            <a href="tel:+551124929548"><Phone aria-hidden="true" />(11) 2492-9548</a>
+            <a href="https://wa.me/5511970982062"><MessageCircle aria-hidden="true" />(11) 97098-2062</a>
+            <a href="https://www.instagram.com/useodonto.instituto?stkn=MTVydFJsemMzbnVmbQ=="><Instagram aria-hidden="true" />@useodonto.instituto</a>
+          </div>
+          <div className="footer-info">
+            <h3>Informações</h3>
+            <span>Endereço</span>
+            <p>Av. Otávio Braga de Mesquita, 1779<br />Vila Florida — Guarulhos/SP<br />07191-000</p>
+          </div>
         </div>
         <div className="footer-bottom container">
           <span>© 2026 Clínica Odontológica em Guarulhos. Todos os direitos reservados.</span>
