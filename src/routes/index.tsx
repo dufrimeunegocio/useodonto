@@ -29,31 +29,31 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-import bannerHero from "@/assets/banner-hero.png.asset.json";
-import implante from "@/assets/implante.png.asset.json";
-import logoTransparente from "@/assets/logo-transparente.png.asset.json";
-import recepcao from "@/assets/recepcao.png.asset.json";
-import salaAtendimento from "@/assets/sala-atendimento.png.asset.json";
-import salaAtendimento1 from "@/assets/sala-atendimento-1.png.asset.json";
-import resultado1 from "@/assets/resultado-1.png.asset.json";
-import resultado2 from "@/assets/resultado-2.png.asset.json";
-import resultado3 from "@/assets/resultado-3.png.asset.json";
-import resultado4 from "@/assets/resultado-4.png.asset.json";
-import convenio01 from "@/assets/convenio-01.png.asset.json";
-import convenio02 from "@/assets/convenio-02.png.asset.json";
-import convenio03 from "@/assets/convenio-03.png.asset.json";
-import convenio04 from "@/assets/convenio-04.png.asset.json";
-import convenio05 from "@/assets/convenio-05.png.asset.json";
-import convenio06 from "@/assets/convenio-06.png.asset.json";
-import convenio07 from "@/assets/convenio-07.png.asset.json";
-import convenio09 from "@/assets/convenio-09.png.asset.json";
-import convenio10 from "@/assets/convenio-10.png.asset.json";
-import convenio11 from "@/assets/convenio-11.png.asset.json";
-import convenio12 from "@/assets/convenio-12.png.asset.json";
-import convenio13 from "@/assets/convenio-13.png.asset.json";
-import convenio14 from "@/assets/convenio-14.png.asset.json";
-import convenio15 from "@/assets/convenio-15.png.asset.json";
-import convenio16 from "@/assets/convenio-16.png.asset.json";
+import bannerHero from "@/assets/banner-hero.png";
+import implante from "@/assets/implante.png";
+import logoTransparente from "@/assets/logo-transparente.png";
+import recepcao from "@/assets/recepcao.png";
+import salaAtendimento from "@/assets/sala-atendimento.png";
+import salaAtendimento1 from "@/assets/sala-atendimento-1.png";
+import resultado1 from "@/assets/resultado-1.png";
+import resultado2 from "@/assets/resultado-2.png";
+import resultado3 from "@/assets/resultado-3.png";
+import resultado4 from "@/assets/resultado-4.png";
+import convenio01 from "@/assets/convenio-01.png";
+import convenio02 from "@/assets/convenio-02.png";
+import convenio03 from "@/assets/convenio-03.png";
+import convenio04 from "@/assets/convenio-04.png";
+import convenio05 from "@/assets/convenio-05.png";
+import convenio06 from "@/assets/convenio-06.png";
+import convenio07 from "@/assets/convenio-07.png";
+import convenio09 from "@/assets/convenio-09.png";
+import convenio10 from "@/assets/convenio-10.png";
+import convenio11 from "@/assets/convenio-11.png";
+import convenio12 from "@/assets/convenio-12.png";
+import convenio13 from "@/assets/convenio-13.png";
+import convenio14 from "@/assets/convenio-14.png";
+import convenio15 from "@/assets/convenio-15.png";
+import convenio16 from "@/assets/convenio-16.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -192,11 +192,11 @@ function Index() {
 
   return (
     <main className="site-shell">
-      <section id="inicio" className="hero" style={{ backgroundImage: `url(${bannerHero.url})` }}>
+      <section id="inicio" className="hero" style={{ backgroundImage: `url(${bannerHero})` }}>
         <div className="hero-overlay" />
         <header className="site-header">
           <a href="#inicio" aria-label="UseOdonto — início" className="brand-link">
-            <img src={logoTransparente.url} alt="UseOdonto Instituto Odontológico" />
+            <img src={logoTransparente} alt="UseOdonto Instituto Odontológico" />
           </a>
           <nav className="desktop-nav" aria-label="Navegação principal">
             {navItems.map(([label, id]) => (
@@ -239,8 +239,8 @@ function Index() {
         <div className="logo-marquee">
           <div className="logo-track">
             {[...convenios, ...convenios].map((asset, index) => (
-              <div className="logo-item" key={`${asset.url}-${index}`}>
-                <img src={asset.url} alt={index < convenios.length ? `Logo do convênio ${index + 1}` : ""} aria-hidden={index >= convenios.length} />
+              <div className="logo-item" key={`${asset}-${index}`}>
+                <img src={asset} alt={index < convenios.length ? `Logo do convênio ${index + 1}` : ""} aria-hidden={index >= convenios.length} />
               </div>
             ))}
           </div>
@@ -269,7 +269,7 @@ function Index() {
           </div>
           <div className="single-carousel result-carousel" aria-live="polite">
             {resultados.map((asset, index) => (
-              <img key={asset.url} src={asset.url} alt={`Resultado de tratamento odontológico ${index + 1}`} className={index === resultadoAtual ? "active" : ""} />
+              <img key={asset} src={asset} alt={`Resultado de tratamento odontológico ${index + 1}`} className={index === resultadoAtual ? "active" : ""} />
             ))}
           </div>
         </div>
@@ -279,7 +279,7 @@ function Index() {
         <div className="container clinic-layout">
           <div className="clinic-carousel single-carousel" aria-live="polite">
             {ambientes.map(({ asset, alt }, index) => (
-              <img key={asset.url} src={asset.url} alt={alt} className={index === ambienteAtual ? "active" : ""} />
+              <img key={asset} src={asset} alt={alt} className={index === ambienteAtual ? "active" : ""} />
             ))}
             <div className="photo-caption">Ambientes pensados para o seu conforto</div>
           </div>
@@ -303,7 +303,7 @@ function Index() {
             </Button>
           </div>
           <div className="implant-image-wrap reveal">
-            <img src={implante.url} alt="Trabalho odontológico de implante realizado pela UseOdonto" />
+            <img src={implante} alt="Trabalho odontológico de implante realizado pela UseOdonto" />
           </div>
         </div>
       </section>
@@ -389,7 +389,7 @@ function Index() {
 
       <footer className="site-footer">
         <div className="container footer-main">
-          <img src={logoTransparente.url} alt="UseOdonto Instituto Odontológico" />
+          <img src={logoTransparente} alt="UseOdonto Instituto Odontológico" />
           <nav aria-label="Navegação do rodapé"><h3>Menu</h3>
             {navItems.map(([label, id]) => <a key={id} href={`#${id}`}>{label}</a>)}
           </nav>
