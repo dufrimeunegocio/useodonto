@@ -83,7 +83,7 @@ button, a { letter-spacing: 0; }
 .mobile-nav { position: absolute; inset: 76px 0 auto; background: color-mix(in srgb, var(--navy) 96%, transparent); border: 1px solid color-mix(in srgb, var(--cream) 12%, transparent); border-radius: 8px; padding: 18px 24px 28px; display: grid; backdrop-filter: blur(14px); }
 .mobile-nav a { padding: 13px 0; border-bottom: 1px solid color-mix(in srgb, var(--cream) 10%, transparent); }
 
-.hero { min-height: 92vh; height: 820px; max-height: 920px; position: relative; display: flex; align-items: center; background-size: 103%; background-position: center 58%; color: var(--cream); animation: hero-drift 14s ease-in-out infinite alternate; }
+.hero { min-height: 92vh; height: 820px; max-height: 920px; position: relative; display: flex; align-items: center; background-size: cover; background-repeat: no-repeat; background-position: center 58%; color: var(--cream); animation: hero-drift 14s ease-in-out infinite alternate; }
 .hero-overlay { position: absolute; inset: 0; background: color-mix(in srgb, var(--navy) 81%, transparent); }
 .hero-overlay::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, color-mix(in srgb, var(--navy-deep) 44%, transparent), transparent 72%); }
 .hero-content { position: relative; z-index: 1; width: min(1180px, calc(100% - 48px)); margin: 52px auto 0; }
