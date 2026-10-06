@@ -174,3 +174,6 @@ button, a { letter-spacing: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .hero, .hero-animate, .logo-track { animation: none; }.hero-animate { opacity: 1; transform: none; } .single-carousel > img, .testimonial-stage figure { transition: none; } }
+.faq-accordion button > svg { display: none; }
+.faq-accordion button::after { content: "+"; flex: none; color: var(--gold); font-size: 26px; font-weight: 400; line-height: 1; }
+.faq-accordion button[data-state="open"]::after { content: "−"; }
